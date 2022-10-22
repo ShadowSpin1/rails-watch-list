@@ -1,9 +1,41 @@
+
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi5.walmartimages.com%2Fasr%2Fb041e07d-63b2-4d1a-9aee-00e681c76bbc_1.e3045309df2f7facc45e943959ec9926.jpeg&f=1&nofb=1&ipt=b1984e06e10ee848c11279b3e2807c7d56bd0488c813ea0aa7254871785ad7bd&ipo=images" />
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <%= link_to "Add list", new_list_path, class:"nav-link"%>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.funcheap.com/wp-content/uploads/2020/09/jake-hills-23LET4Hxj_U-unsplash-scaled.jpg);">
+  <div class="container">
+    <h1>Save any kind of movies</h1>
+    <p>Your one stop shop for movie storage</p>
+  </div>
+</div>
+<div class="lists">
 <div class=container>
-  <h1>Here are your watch lists</h1>
-  <ul>
-    <% @lists.each do |list| %>
-      <li><%= link_to list.name, list_path(list) %></li>
-    <% end %>
-  </ul>
-  <%= link_to "Add list", new_list_path %>
+  <h3>My Lists</h3>
+</div>
+<div class="row">
+  <% @lists.each do |list| %>
+    <div class="col">
+      <div class="card h-100 mx-auto" style="width: 18rem">
+        <img src="https://source.unsplash.com/random" class="card-img-top" alt="Some Image">
+        <div class="card-body">
+          <h5 class="card-title"><%=list.name%></h5>
+          <%= link_to 'See list', list_path(list), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 </div>
