@@ -28,11 +28,11 @@
 <div class="row">
   <% @lists.each do |list| %>
     <div class="col">
-      <div class="card h-100 mx-auto" style="width: 18rem">
+      <div class="card mx-auto" style="width: 18rem">
         <% if list.photo.attached? %>
-        <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fit, class: "card-img-top" %>
+        <%= cl_image_tag list.photo.key,width: 300, height: 200, crop: :fill, class: "card-img-top" %>
         <% else %>
-        <%= image_tag "https://res.cloudinary.com/dixe4r20z/image/upload/v1666742117/cld-sample-2.jpg", height: 300, width: 400, crop: :fit, class: "card-img-top" %>
+        <%= image_tag "https://res.cloudinary.com/dixe4r20z/image/upload/v1666742117/cld-sample-2.jpg",width: 300, height: 200, crop: :fill, class: "card-img-top" %>
         <% end %>
         <div class="card-body">
           <h5 class="card-title"><%=list.name%></h5>
